@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\birthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,9 +22,9 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-/*Route::get('Birth_Doc/birth', function () {
-    return view('Birth_Doc/birth');
- });*/
+Route::get('/Birth_Doc/birth', function () {
+    return Birth_Doc('/Birth_Doc/birth');
+ });
 
 
 Route::get('Chief_Register',function(){
@@ -41,3 +42,6 @@ Route::get('SDO_officier',function(){
 Route::get('Police_Officier',function(){
     return view('Police_Officier');  
 })->name('Police_Officier')->middleware('Police_Officier');
+
+Route::get('/birth', [birthController::class, 'showBirthCertificateForm'])->name('birth');
+Route::post('/store-birth-certificate', [birthController::class, 'storeBirthCertificate'])->name('storeBirthCertificate');

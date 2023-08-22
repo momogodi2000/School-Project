@@ -22,7 +22,7 @@
     </header>
     <ul class="nav">
       <li>
-      <a href="#">
+      <a href="{{ url('/Birth_Doc/birth') }}">
           <i class="zmdi zmdi-view-dashboard"></i> Birth certificate
         </a>
       </li>
