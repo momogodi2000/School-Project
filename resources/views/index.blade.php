@@ -27,7 +27,7 @@
         </a>
       </li>
       <li>
-        <a href="#">
+        <a href="{{ url('/Id_card/national_id') }}">
           <i class="zmdi zmdi-link"></i> National Identification card
         </a>
       </li>

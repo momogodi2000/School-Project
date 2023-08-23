@@ -1,8 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
+use BaconQrCode\Encoder\QrCode;
+use BaconQrCode\Renderer\Image\Png;
+use App\Models\BirthCertificate;
 
 class HomeController extends Controller
 {
@@ -25,4 +27,6 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+
 }

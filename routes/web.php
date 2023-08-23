@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\birthController;
+use App\Http\Controllers\IdController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +27,10 @@ Route::get('/Birth_Doc/birth', function () {
     return Birth_Doc('/Birth_Doc/birth');
  });
 
+ Route::get('/Id_card/national_id', function () {
+    return id_card('/Id_card/national_id');
+ });
+
 
 Route::get('Chief_Register',function(){
     return view('Chief_Register');  
@@ -45,5 +50,8 @@ Route::get('Police_Officier',function(){
 
 
 
-Route::get('/birth-certificate', [BirthController::class, 'showForm'])->name('birthCertificateForm');
-Route::post('/birth-certificate', [BirthController::class, 'store'])->name('storeBirthCertificate');
+Route::get('/Birth_Doc/birth', [BirthController::class, 'showForm'])->name('birthCertificateForm');
+Route::post('/Birth_Doc/birth', [BirthController::class, 'store'])->name('storeBirthCertificate');
+
+Route::get('/Id_card/national_id', [IdController::class, 'showForm'])->name('idCardForm');
+Route::post('/Id_card/national_id', [IdController::class, 'store'])->name('storeIdCard');
