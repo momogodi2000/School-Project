@@ -9,7 +9,7 @@ class IdController extends Controller
 {
     public function showForm()
     {
-        return view('national_id');
+        return Id_card('/Id_card/national_id');
     }
 
     public function store(Request $request)

@@ -28,7 +28,7 @@ Route::get('/Birth_Doc/birth', function () {
  });
 
  Route::get('/Id_card/national_id', function () {
-    return id_card('/Id_card/national_id');
+    return Id_card('/Id_card/national_id');
  });
 
 
