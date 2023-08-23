@@ -23,13 +23,13 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+// route for birth certificate
 Route::get('/Birth_Doc/birth', function () {
     return Birth_Doc('/Birth_Doc/birth');
  });
 
- Route::get('/Id_card/national_id', function () {
-    return Id_card('/Id_card/national_id');
- });
+ Route::get('/Birth_Doc/birth', [BirthController::class, 'showForm'])->name('birthCertificateForm');
+ Route::post('/Birth_Doc/birth', [BirthController::class, 'store'])->name('storeBirthCertificate');
 
 
 Route::get('Chief_Register',function(){
@@ -48,10 +48,13 @@ Route::get('Police_Officier',function(){
     return view('Police_Officier');  
 })->name('Police_Officier')->middleware('Police_Officier');
 
-
-
-Route::get('/Birth_Doc/birth', [BirthController::class, 'showForm'])->name('birthCertificateForm');
-Route::post('/Birth_Doc/birth', [BirthController::class, 'store'])->name('storeBirthCertificate');
+ 
+// route for id card
+Route::get('/Id_card/national_id', function () {
+    return Id_card('/Id_card/national_id');
+ });
 
 Route::get('/Id_card/national_id', [IdController::class, 'showForm'])->name('idCardForm');
 Route::post('/Id_card/national_id', [IdController::class, 'store'])->name('storeIdCard');
+
+

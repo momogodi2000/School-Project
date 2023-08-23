@@ -4,7 +4,7 @@
     <title>National ID Card Form</title>
     <style>
         /* CSS styles for form */
-          .form-container {
+        .form-container {
             width: 400px;
             margin: 0 auto;
             padding: 20px;
@@ -50,27 +50,40 @@
     </style>
 </head>
 <body>
-    <h1>National ID Card Form</h1>
+    <div class="form-container">
+        <h2>National ID Card Form</h2>
+        <form method="POST" action="{{ url('saveIdCard') }}">
+            @csrf
+            <div class="form-group">
+                <label for="full_name">Full Name:</label>
+                <input type="text" id="full_name" name="full_name" required>
+            </div>
 
-    <form id="idCardForm" method="POST" action="{{ url('storeIdCard') }}">
-        @csrf
-        <label for="fullName">Full Name:</label>
-        <input type="text" id="fullName" name="full_name" required>
+            <div class="form-group">
+                <label for="date_of_birth">Date of Birth:</label>
+                <input type="text" id="date_of_birth" name="date_of_birth" required>
+            </div>
 
-        <label for="dateOfBirth">Date of Birth:</label>
-        <input type="text" id="dateOfBirth" name="date_of_birth" required>
+            <div class="form-group">
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender" required>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
 
-        <label for="gender">Gender:</label>
-        <select id="gender" name="gender" required>
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-        </select>
+            <div class="form-group">
+                <label for="address">Address:</label>
+                <textarea id="address" name="address" required></textarea>
+            </div>
 
-        <label for="address">Address:</label>
-        <textarea id="address" name="address" required></textarea>
+            <div class="form-submit">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
 
-        <button type="submit">Submit</button>
-    </form>
+
 
     <div id="qrCodeContainer"></div>
 

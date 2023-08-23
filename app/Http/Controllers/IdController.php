@@ -43,5 +43,6 @@ class IdController extends Controller
     {
         // ... Your code to generate a unique QR code here ...
         // For example, you can use a library like "endroid/qr-code" to generate QR codes.
+        
     }
 }

@@ -66,8 +66,8 @@
     <div class="form-container">
         <h2>Birth Certificate Application Form</h2>
 
-      <form id="birth" method="POST" action="{{ url('storeBirthCertificate') }}">
-        @csrf
+      <form method="POST" action="{{ url('saveIdCard') }}">
+            @csrf
             <label for="child_name">Child's Full Name:</label>
             <input type="text" id="child_name" name="child_name" required>
 
