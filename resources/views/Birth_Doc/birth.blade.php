@@ -110,8 +110,8 @@
 
  <div id="qrCodeContainer"></div>
     <script>
-         // JavaScript animation for form submission
-        const form = document.getElementById('birth');
+               // JavaScript animation for form submission
+        const form = document.getElementById('birthCertificateForm');
         form.addEventListener('submit', (event) => {
             event.preventDefault();
             form.classList.add('submitted');
@@ -119,6 +119,28 @@
                 form.submit();
             }, 1000);
         });
+
+        // Generate QR code on form submission
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            const formData = new FormData(form);
+            const qrCodeData = {};
+            for (const [key, value] of formData.entries()) {
+                qrCodeData[key] = value;
+            }
+
+            const qrCodeText = JSON.stringify(qrCodeData);
+            const qrCodeContainer = document.getElementById('qrCodeContainer');
+            qrCodeContainer.innerHTML = '';
+
+            const qr = new QRious({
+                element: qrCodeContainer,
+                value: qrCodeText,
+                size: 200
+            });
+        });
+
     </script>
    
 </body>

@@ -1,20 +1,19 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use BaconQrCode\Encoder\QrCode;
 use BaconQrCode\Renderer\Image\Png;
-use App\Models\Birth;
+use App\Models\BirthCertificate;
 
-class YourController extends Controller
+class BirthController extends Controller
 {
-    public function showBirthCertificateForm()
+    public function showForm()
     {
         return Birth_Doc('/Birth_Doc/birth');
     }
 
-    public function storeBirthCertificate(Request $request)
+    public function store(Request $request)
     {
         $validatedData = $request->validate([
             'child_name' => 'required',

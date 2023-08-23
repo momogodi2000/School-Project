@@ -43,5 +43,7 @@ Route::get('Police_Officier',function(){
     return view('Police_Officier');  
 })->name('Police_Officier')->middleware('Police_Officier');
 
-Route::get('/birth', [birthController::class, 'showBirthCertificateForm'])->name('birth');
-Route::post('/store-birth-certificate', [birthController::class, 'storeBirthCertificate'])->name('storeBirthCertificate');
+
+
+Route::get('/birth-certificate', [BirthController::class, 'showForm'])->name('birthCertificateForm');
+Route::post('/birth-certificate', [BirthController::class, 'store'])->name('storeBirthCertificate');
