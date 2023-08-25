@@ -32,17 +32,13 @@
         </a>
       </li>
       <li>
-        <a href="#">
+        <a href="{{ url('/contact_us/about_us') }}">
           <i class="zmdi zmdi-info-outline"></i> About Us
         </a>
       </li>
       <li>
-        <a href="#">
-          <i class="zmdi zmdi-settings"></i> Cameroon symbol
-        </a>
-      </li>
       <li>
-        <a href="#">
+        <a href="{{ url('/contact_us/contact_us') }}">
           <i class="zmdi zmdi-comment-more"></i> Contact Us
         </a>
       </li>

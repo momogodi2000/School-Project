@@ -57,4 +57,14 @@ Route::get('/Id_card/national_id', function () {
 Route::get('/Id_card/national_id', [IdController::class, 'showForm'])->name('idCardForm');
 Route::post('/Id_card/national_id', [IdController::class, 'store'])->name('storeIdCard');
 
+// route for about contact us
 
+Route::get('/contact_us/contact_us', function () {
+    return contact_us('/contact_us/contact_us');
+ });
+
+ // route for about us
+ 
+ Route::get('/contact_us/about_us', function () {
+    return contact_us('/contact_us/about_us');
+ });
